@@ -4,188 +4,196 @@
     <title>Student Management</title>
     <style>
         :root {
-        --primary: #4f46e5;
-        --primary-light: #eef2ff;
+            --primary: #4f46e5;
+            --primary-light: #eef2ff;
 
-        --success: #16a34a;
-        --success-light: #ecfdf5;
+            --success: #16a34a;
+            --success-light: #ecfdf5;
 
-        --danger: #dc2626;
-        --danger-light: #fef2f2;
+            --danger: #dc2626;
+            --danger-light: #fef2f2;
 
-        --bg: #f8fafc;
-        --card: #ffffff;
-        --border: #e5e7eb;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --border: #e5e7eb;
 
-        --text: #0f172a;
-        --muted: #64748b;
-    }
+            --text: #0f172a;
+            --muted: #64748b;
+        }
 
+        body {
+            margin: 0;
+            font-family: "Segoe UI", system-ui, sans-serif;
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            color: var(--text);
+            transition: background 0.3s, color 0.3s;
+        }
 
-    body.dark {
-        --primary: #818cf8;
-        --bg: #0f172a;
-        --card: #020617;
-        --border: #1e293b;
-        --text: #e5e7eb;
-        --muted: #94a3b8;
-    }
+        body.dark {
+            --bg: #020617;
+            --card: #020617;
+            --border: #1e293b;
 
-   body {
-        margin: 0;
-        font-family: "Segoe UI", system-ui, sans-serif;
-        background: linear-gradient(to right, #f8fafc, #7aa7d4);
-        color: var(--text);
-        transition: background 0.3s, color 0.3s;
-    }
+            --text: #e5e7eb;
+            --muted: #94a3b8;
 
-    .container {
-        max-width: 1000px;
-        margin: auto;
-        padding: 30px;
-    }
+            --primary: #60a5fa;
+            --primary-light: #1e293b;
 
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 30px;
-    }
+            --success: #4ade80;
+            --success-light: #022c22;
 
-    nav a {
-        text-decoration: none;
-        color: var(--muted);
-        margin-right: 15px;
-        font-weight: 500;
-    }
+            --danger: #fb7185;
+            --danger-light: #450a0a;
 
-    nav a:hover {
-        color: var(--primary);
-    }
+            background: linear-gradient(135deg, #0f172a, #020617);
+        }
 
-    .card {
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-    }
-    .card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 30px;
+        }
 
-    h2 {
-        margin-top: 0;
-    }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 15px;
-    }
+        nav a {
+            text-decoration: none;
+            color: var(--muted);
+            margin-right: 15px;
+            font-weight: 500;
+        }
 
-    th {
-        background: var(--primary-light);
-        color: var(--primary);
-        text-align: left;
-        font-size: 13px;
-        color: var(--muted);
-        border-bottom: 1px solid var(--border);
-        padding: 10px;
-    }
+        nav a:hover {
+            color: var(--primary);
+        }
 
-    td {
-        padding: 12px 10px;
-        border-bottom: 1px solid var(--border);
-    }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
 
-    tr:hover {
-        background: #f3f4f6;
-    }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+        }
 
-    .btn {
-        padding: 6px 12px;
-        border-radius: 6px;
-        font-size: 13px;
-        border: none;
-        cursor: pointer;
-    }
+        h2 {
+            margin-top: 0;
+        }
 
-    .btn-primary {
-        background: linear-gradient(to right, #4f46e5, #6366f1);
-        color: white;
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
 
-    .btn-primary:hover {
-        background: linear-gradient(to right, #4338ca, #4f46e5);
-    }
+        th {
+            background: var(--primary-light);
+            color: var(--muted);
+            text-align: left;
+            font-size: 13px;
+            border-bottom: 1px solid var(--border);
+            padding: 12px;
+        }
 
-    .btn-danger {
-        background: linear-gradient(to right, #dc2626, #ef4444);
-        color: white;
-    }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
 
-    .btn-outline {
-        background: var(--primary-light);
-        color: var(--primary);
-        border: none;
-    }
-    .btn-outline:hover {
-        background: var(--primary);
-        color: white;
-    }
+        tr:hover {
+            background: rgba(0,0,0,0.04);
+        }
 
-    .btn:hover {
-        opacity: 0.9;
-    }
+        body.dark tr:hover {
+            background: rgba(255,255,255,0.04);
+        }
 
-    .btn-outline:hover {
-        background: var(--border);
-    }
+        .btn {
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+        }
 
+        .btn-primary {
+            background: linear-gradient(to right, #4f46e5, #6366f1);
+            color: white;
+        }
 
-    label {
-        font-size: 13px;
-        color: var(--muted);
-    }
+        .btn-primary:hover {
+            background: linear-gradient(to right, #4338ca, #4f46e5);
+        }
 
-    input {
-        width: 100%;
-        padding: 8px 10px;
-        border-radius: 6px;
-        border: 1px solid var(--border);
-        margin-top: 4px;
-        margin-bottom: 15px;
-    }
+        .btn-danger {
+            background: linear-gradient(to right, #dc2626, #ef4444);
+            color: white;
+        }
 
-    input:focus {
-        border-color: var(--primary);
-        box-shadow: 0 0 0 2px var(--primary-light);
-    }
+        .btn-outline {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
 
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
 
-    .alert-success {
-        background: var(--success-light);
-        color: var(--success);
-        border-left: 4px solid var(--success);
-        padding: 10px;
-        border-radius: 6px;
-        margin-bottom: 15px;
-    }
+        label {
+            font-size: 13px;
+            color: var(--muted);
+        }
 
-    .alert-error {
-        background: var(--danger-light);
-        color: var(--danger);
-        border-left: 4px solid var(--danger);
-        padding: 10px;
-        border-radius: 6px;
-        margin-bottom: 15px;
-    }
-</style>
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-top: 6px;
+            margin-bottom: 18px;
+            background: var(--card);
+            color: var(--text);
+        }
 
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(96,165,250,0.3);
+        }
+
+        .alert-success {
+            background: var(--success-light);
+            color: var(--success);
+            border-left: 4px solid var(--success);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .alert-error {
+            background: var(--danger-light);
+            color: var(--danger);
+            border-left: 4px solid var(--danger);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
+
 <body>
 <div class="container">
 
@@ -197,15 +205,12 @@
 
     <div>
         <button id="themeToggle" class="btn btn-outline">🌙</button>
-
         <form method="POST" action="/logout" style="display:inline;">
             @csrf
             <button class="btn btn-outline">Logout</button>
         </form>
     </div>
 </nav>
-
-
 
 @if ($errors->any())
     <div class="alert-error">
@@ -231,7 +236,6 @@
     const toggleBtn = document.getElementById('themeToggle');
     const body = document.body;
 
-    // Load saved theme
     if (localStorage.getItem('theme') === 'dark') {
         body.classList.add('dark');
         toggleBtn.textContent = '☀️';
@@ -239,7 +243,6 @@
 
     toggleBtn.addEventListener('click', () => {
         body.classList.toggle('dark');
-
         if (body.classList.contains('dark')) {
             localStorage.setItem('theme', 'dark');
             toggleBtn.textContent = '☀️';
@@ -251,5 +254,4 @@
 </script>
 
 </body>
-
 </html>
