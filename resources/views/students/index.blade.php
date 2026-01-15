@@ -2,6 +2,10 @@
 
 @section('content')
 <h2>Students List</h2>
+    
+@if($students->count() == 0)
+    <p>No students found.</p>
+@endif
 
 <table>
 <tr>
