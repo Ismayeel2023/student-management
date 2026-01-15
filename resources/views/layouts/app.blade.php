@@ -3,14 +3,24 @@
 <head>
     <title>Student Management</title>
     <style>
-     :root {
+        :root {
         --primary: #4f46e5;
-        --bg: #f9fafb;
+        --primary-light: #eef2ff;
+
+        --success: #16a34a;
+        --success-light: #ecfdf5;
+
+        --danger: #dc2626;
+        --danger-light: #fef2f2;
+
+        --bg: #f8fafc;
         --card: #ffffff;
         --border: #e5e7eb;
-        --text: #111827;
-        --muted: #6b7280;
+
+        --text: #0f172a;
+        --muted: #64748b;
     }
+
 
     body.dark {
         --primary: #818cf8;
@@ -24,7 +34,7 @@
    body {
         margin: 0;
         font-family: "Segoe UI", system-ui, sans-serif;
-        background: var(--bg);
+        background: linear-gradient(to right, #f8fafc, #7aa7d4);
         color: var(--text);
         transition: background 0.3s, color 0.3s;
     }
@@ -35,7 +45,6 @@
         padding: 30px;
     }
 
-    /* Navbar */
     nav {
         display: flex;
         justify-content: space-between;
@@ -54,20 +63,23 @@
         color: var(--primary);
     }
 
-    /* Card */
     .card {
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
         background: var(--card);
         border: 1px solid var(--border);
         border-radius: 8px;
         padding: 20px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     }
+    .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
 
     h2 {
         margin-top: 0;
     }
 
-    /* Table */
     table {
         width: 100%;
         border-collapse: collapse;
@@ -75,6 +87,8 @@
     }
 
     th {
+        background: var(--primary-light);
+        color: var(--primary);
         text-align: left;
         font-size: 13px;
         color: var(--muted);
@@ -100,19 +114,27 @@
     }
 
     .btn-primary {
-        background: var(--primary);
+        background: linear-gradient(to right, #4f46e5, #6366f1);
         color: white;
     }
 
+    .btn-primary:hover {
+        background: linear-gradient(to right, #4338ca, #4f46e5);
+    }
+
     .btn-danger {
-        background: #ef4444;
+        background: linear-gradient(to right, #dc2626, #ef4444);
         color: white;
     }
 
     .btn-outline {
-        background: transparent;
-        border: 1px solid var(--border);
-        color: var(--muted);
+        background: var(--primary-light);
+        color: var(--primary);
+        border: none;
+    }
+    .btn-outline:hover {
+        background: var(--primary);
+        color: white;
     }
 
     .btn:hover {
@@ -139,22 +161,24 @@
     }
 
     input:focus {
-        outline: none;
         border-color: var(--primary);
+        box-shadow: 0 0 0 2px var(--primary-light);
     }
 
-    /* Alerts */
+
     .alert-success {
-        background: #ecfdf5;
-        color: #065f46;
+        background: var(--success-light);
+        color: var(--success);
+        border-left: 4px solid var(--success);
         padding: 10px;
         border-radius: 6px;
         margin-bottom: 15px;
     }
 
     .alert-error {
-        background: #fef2f2;
-        color: #991b1b;
+        background: var(--danger-light);
+        color: var(--danger);
+        border-left: 4px solid var(--danger);
         padding: 10px;
         border-radius: 6px;
         margin-bottom: 15px;
