@@ -1,21 +1,28 @@
 # Student Management System (Laravel)
 
-Simple student management CRUD application built using Laravel and Blade.
+A clean and simple student management system built using Laravel and Blade.
+The project features a custom-designed UI with light and dark mode support,
+without using any CSS framework.
 
 ## Features
 - Authentication (Laravel Breeze)
-- Add / Edit / Delete Students
-- Validation & Flash Messages
-- Simple UI (No Bootstrap)
+- Student CRUD (Create, Read, Update, Delete)
+- Custom UI using pure CSS
+- Light / Dark mode toggle (saved in browser)
+- Form validation with flash messages
 
 ## Tech Stack
 - Laravel
 - Blade
 - MySQL
+- Vanilla CSS
+- JavaScript
 
-## Setup
-1. Clone repo
-2. composer install
-3. npm install && npm run dev
-4. php artisan migrate
-5. php artisan serve
+## Setup Instructions
+1. Clone the repository
+2. Run `composer install`
+3. Run `npm install && npm run dev`
+4. Configure `.env` and database
+5. Run `php artisan migrate`
+6. Start server using `php artisan serve`
+
