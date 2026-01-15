@@ -3,25 +3,24 @@
 @section('content')
 <div class="card">
 
-<h2>Edit Student</h2>
+<h2>Add Student</h2>
 
-<form method="POST" action="/students/{{ $student->id }}">
+<form method="POST" action="/students">
 @csrf
-@method('PUT')
 
 <label>Name</label>
-<input type="text" name="name" value="{{ $student->name }}">
+<input type="text" name="name">
 
 <label>Email</label>
-<input type="email" name="email" value="{{ $student->email }}">
+<input type="email" name="email">
 
 <label>Course</label>
-<input type="text" name="course" value="{{ $student->course }}">
+<input type="text" name="course">
 
 <label>Year</label>
-<input type="number" name="year" value="{{ $student->year }}">
+<input type="number" name="year">
 
-<button class="btn btn-primary" type="submit">Update</button>
+<button class="btn btn-primary" type="submit">Save</button>
 </form>
 
 </div>
