@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<h2>Students List</h2>
-    
+<div class="card">
+<h2>Students</h2>
+
 @if($students->count() == 0)
     <p>No students found.</p>
-@endif
-
+@else
 <table>
 <tr>
     <th>Name</th>
@@ -23,13 +23,16 @@
     <td>{{ $student->course }}</td>
     <td>{{ $student->year }}</td>
     <td>
-        <a href="/students/{{ $student->id }}/edit">Edit</a>
+        <a class="btn btn-outline" href="/students/{{ $student->id }}/edit">Edit</a>
+
         <form method="POST" action="/students/{{ $student->id }}" style="display:inline;">
             @csrf @method('DELETE')
-            <button>Delete</button>
+            <button class="btn btn-danger">Delete</button>
         </form>
     </td>
 </tr>
 @endforeach
 </table>
+@endif
+</div>
 @endsection

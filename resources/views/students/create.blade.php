@@ -1,23 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-<h2>Add Student</h2>
+<div class="card">
 
-<form method="POST" action="/students">
+<h2>Edit Student</h2>
+
+<form method="POST" action="/students/{{ $student->id }}">
 @csrf
+@method('PUT')
 
-<label>Name</label><br>
-<input type="text" name="name"><br><br>
+<label>Name</label>
+<input type="text" name="name" value="{{ $student->name }}">
 
-<label>Email</label><br>
-<input type="email" name="email"><br><br>
+<label>Email</label>
+<input type="email" name="email" value="{{ $student->email }}">
 
-<label>Course</label><br>
-<input type="text" name="course"><br><br>
+<label>Course</label>
+<input type="text" name="course" value="{{ $student->course }}">
 
-<label>Year</label><br>
-<input type="number" name="year"><br><br>
+<label>Year</label>
+<input type="number" name="year" value="{{ $student->year }}">
 
-<button type="submit">Save</button>
+<button class="btn btn-primary" type="submit">Update</button>
 </form>
+
+</div>
 @endsection
